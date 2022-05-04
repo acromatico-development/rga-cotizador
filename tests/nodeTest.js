@@ -1,9 +1,10 @@
 const cliente = require("../dist/cjs/index");
+variableEstadoCepomex = "Ciudad de México";
 
 const cotizacion = new cliente.Cotizador(
-  20000,
-  cliente.EstadoEnGarantia.CiudadDeMexico,
-  cliente.EstadoFirma.CiudadDeMexico,
+  3000,
+  cliente.EstadoEnGarantia[variableEstadoCepomex],
+  cliente.EstadoFirma[variableEstadoCepomex],
   cliente.NivelCobertura.alpha
 );
 

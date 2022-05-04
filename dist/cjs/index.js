@@ -9,80 +9,80 @@ $parcel$export(module.exports, "Coberturas", () => $1ad517f6efcdb4ef$export$6e7b
 $parcel$export(module.exports, "Cotizador", () => $1ad517f6efcdb4ef$export$3bbcb4831e58d00d);
 let $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3;
 (function($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3) {
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Aguascalientes"] = 1900] = "Aguascalientes";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["BajaCalifornia"] = 3200] = "BajaCalifornia";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["BajaCaliforniaSur"] = 3200] = "BajaCaliforniaSur";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Campeche"] = 3200] = "Campeche";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chiapas"] = 3200] = "Chiapas";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chihuahua"] = 3200] = "Chihuahua";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["CiudadDeMexico"] = 420] = "CiudadDeMexico";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["CoahuilaDeZaragoza"] = 3200] = "CoahuilaDeZaragoza";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Colima"] = 3200] = "Colima";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Durango"] = 3200] = "Durango";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guanajuato"] = 1800] = "Guanajuato";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guerrero"] = 2800] = "Guerrero";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Hidalgo"] = 1300] = "Hidalgo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Jalisco"] = 3200] = "Jalisco";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Mexico"] = 1100] = "Mexico";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["MichoacanDeOcampo"] = 1800] = "MichoacanDeOcampo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Morelos"] = 1100] = "Morelos";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nayarit"] = 1000] = "Nayarit";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["NuevoLeon"] = 3200] = "NuevoLeon";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Oaxaca"] = 2800] = "Oaxaca";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Aguascalientes"] = 460] = "Aguascalientes";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California"] = 3350] = "Baja California";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California Sur"] = 3350] = "Baja California Sur";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Campeche"] = 575] = "Campeche";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chiapas"] = 460] = "Chiapas";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chihuahua"] = 460] = "Chihuahua";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de México"] = 420] = "Ciudad de México";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Coahuila de Zaragoza"] = 460] = "Coahuila de Zaragoza";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Colima"] = 460] = "Colima";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Durango"] = 575] = "Durango";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guanajuato"] = 460] = "Guanajuato";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guerrero"] = 2050] = "Guerrero";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Hidalgo"] = 1050] = "Hidalgo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Jalisco"] = 690] = "Jalisco";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["México"] = 500] = "México";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Michoacán de Ocampo"] = 1950] = "Michoacán de Ocampo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Morelos"] = 460] = "Morelos";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nayarit"] = 460] = "Nayarit";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nuevo León"] = 575] = "Nuevo León";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Oaxaca"] = 575] = "Oaxaca";
     $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Puebla"] = 1800] = "Puebla";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Queretaro"] = 1300] = "Queretaro";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["QuintanaRoo"] = 3200] = "QuintanaRoo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["SanLuisPotosi"] = 2200] = "SanLuisPotosi";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Querétaro"] = 460] = "Querétaro";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Quintana Roo"] = 1200] = "Quintana Roo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["San Luis Potosí"] = 2200] = "San Luis Potosí";
     $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sinaloa"] = 3200] = "Sinaloa";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sonora"] = 3200] = "Sonora";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tabasco"] = 3200] = "Tabasco";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tamaulipas"] = 3200] = "Tamaulipas";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tlaxcala"] = 1300] = "Tlaxcala";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["VeracruzDeIgnacioDeLaLlave"] = 3200] = "VeracruzDeIgnacioDeLaLlave";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Yucatan"] = 3200] = "Yucatan";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Zacatecas"] = 2800] = "Zacatecas";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sonora"] = 3000] = "Sonora";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tabasco"] = 575] = "Tabasco";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tamaulipas"] = 575] = "Tamaulipas";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tlaxcala"] = 1450] = "Tlaxcala";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Yucatán"] = 3350] = "Yucatán";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Zacatecas"] = 575] = "Zacatecas";
 })($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 || ($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 = {
 }));
 let $1ad517f6efcdb4ef$export$4d1c8da1ae941898;
 (function($1ad517f6efcdb4ef$export$4d1c8da1ae941898) {
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Aguascalientes"] = 2000] = "Aguascalientes";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["BajaCalifornia"] = 4000] = "BajaCalifornia";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["BajaCaliforniaSur"] = 2000] = "BajaCaliforniaSur";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Campeche"] = 2000] = "Campeche";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Chiapas"] = 2000] = "Chiapas";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Chihuahua"] = 2000] = "Chihuahua";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["CiudadDeMexico"] = 300] = "CiudadDeMexico";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["CoahuilaDeZaragoza"] = 2000] = "CoahuilaDeZaragoza";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Colima"] = 2000] = "Colima";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Durango"] = 2000] = "Durango";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Guanajuato"] = 2000] = "Guanajuato";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Guerrero"] = 2000] = "Guerrero";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Hidalgo"] = 1300] = "Hidalgo";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Jalisco"] = 2000] = "Jalisco";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Mexico"] = 2000] = "Mexico";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["MichoacanDeOcampo"] = 2000] = "MichoacanDeOcampo";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Morelos"] = 2000] = "Morelos";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Nayarit"] = 2000] = "Nayarit";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["NuevoLeon"] = 2000] = "NuevoLeon";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Oaxaca"] = 2000] = "Oaxaca";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Puebla"] = 2000] = "Puebla";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Queretaro"] = 2000] = "Queretaro";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["QuintanaRoo"] = 2000] = "QuintanaRoo";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["SanLuisPotosi"] = 2000] = "SanLuisPotosi";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Sinaloa"] = 2000] = "Sinaloa";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Sonora"] = 2000] = "Sonora";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tabasco"] = 2000] = "Tabasco";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tamaulipas"] = 2000] = "Tamaulipas";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tlaxcala"] = 2000] = "Tlaxcala";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["VeracruzDeIgnacioDeLaLlave"] = 2000] = "VeracruzDeIgnacioDeLaLlave";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Yucatan"] = 2000] = "Yucatan";
-    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Zacatecas"] = 2000] = "Zacatecas";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Aguascalientes"] = 5000] = "Aguascalientes";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Baja California"] = 5000] = "Baja California";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Baja California Sur"] = 5000] = "Baja California Sur";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Campeche"] = 5000] = "Campeche";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Chiapas"] = 5000] = "Chiapas";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Chihuahua"] = 5000] = "Chihuahua";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Ciudad de México"] = 300] = "Ciudad de México";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Coahuila de Zaragoza"] = 5000] = "Coahuila de Zaragoza";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Colima"] = 5000] = "Colima";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Durango"] = 5000] = "Durango";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Guanajuato"] = 5000] = "Guanajuato";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Guerrero"] = 5000] = "Guerrero";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Hidalgo"] = 5000] = "Hidalgo";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Jalisco"] = 5000] = "Jalisco";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["México"] = 350] = "México";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Michoacán de Ocampo"] = 5000] = "Michoacán de Ocampo";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Morelos"] = 5000] = "Morelos";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Nayarit"] = 5000] = "Nayarit";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Nuevo León"] = 5000] = "Nuevo León";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Oaxaca"] = 5000] = "Oaxaca";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Puebla"] = 500] = "Puebla";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Querétaro"] = 5000] = "Querétaro";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Quintana Roo"] = 5000] = "Quintana Roo";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["San Luis Potosí"] = 5000] = "San Luis Potosí";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Sinaloa"] = 5000] = "Sinaloa";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Sonora"] = 5000] = "Sonora";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tabasco"] = 5000] = "Tabasco";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tamaulipas"] = 5000] = "Tamaulipas";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Tlaxcala"] = 5000] = "Tlaxcala";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Veracruz de Ignacio de la Llave"] = 5000] = "Veracruz de Ignacio de la Llave";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Yucatán"] = 5000] = "Yucatán";
+    $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Zacatecas"] = 5000] = "Zacatecas";
 })($1ad517f6efcdb4ef$export$4d1c8da1ae941898 || ($1ad517f6efcdb4ef$export$4d1c8da1ae941898 = {
 }));
 let $1ad517f6efcdb4ef$export$8250b6f35bc15c68;
 (function($1ad517f6efcdb4ef$export$8250b6f35bc15c68) {
-    $1ad517f6efcdb4ef$export$8250b6f35bc15c68[// alphaLight,
-    "alpha"] = "Alpha";
+    $1ad517f6efcdb4ef$export$8250b6f35bc15c68["lite"] = "Lite";
+    $1ad517f6efcdb4ef$export$8250b6f35bc15c68["alpha"] = "Alpha";
     $1ad517f6efcdb4ef$export$8250b6f35bc15c68["alphaPlus"] = "Alpha Plus";
 })($1ad517f6efcdb4ef$export$8250b6f35bc15c68 || ($1ad517f6efcdb4ef$export$8250b6f35bc15c68 = {
 }));
@@ -139,6 +139,14 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
                     $1ad517f6efcdb4ef$export$6e7b439551acada7.recuperacionDeAdeudos,
                     $1ad517f6efcdb4ef$export$6e7b439551acada7.seguro, 
                 ]
+            },
+            {
+                nombre: $1ad517f6efcdb4ef$export$8250b6f35bc15c68.lite,
+                coberturas: [
+                    $1ad517f6efcdb4ef$export$6e7b439551acada7.investigacionRG,
+                    $1ad517f6efcdb4ef$export$6e7b439551acada7.gestionExtrajudicial,
+                    $1ad517f6efcdb4ef$export$6e7b439551acada7.recuperacionInmueble, 
+                ]
             }, 
         ];
         this.nivelCobertura = this._niveles.find((niv)=>niv.nombre === nivelCobertura
@@ -173,7 +181,8 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
         if (renta <= 7000) resultado += 350;
         else if (renta <= 40000) resultado += 0.05 * renta;
         else resultado += 2000;
-        return resultado - 821.86;
+        resultado = resultado - 821.86;
+        return resultado;
     }
     calcularCostos() {
         this.costoInvestigacion = this.nivelCobertura?.coberturas.find((cober)=>cober === $1ad517f6efcdb4ef$export$6e7b439551acada7.investigacionRpp
@@ -194,7 +203,10 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
     cotizar() {
         this._costoDeVentas = this.costoInvestigacion + this.costoSeguro + this.costoFirma + this.costoInvestigacionRg + this.costoIncumplimiento + this.costoRecuperacion + this.costoAdeudos;
         this._utilidad = this.calculoUtilidad(this.renta);
-        this.precioDeVentas = Math.floor((this._utilidad + this._costoDeVentas) * 100) / 100;
+        let precioVentasTemp = this._utilidad + this._costoDeVentas;
+        // Minimo de precio de venta ed de $3500 ya con IVA
+        if (precioVentasTemp * 1.16 < 3500) precioVentasTemp = 3500 / 1.16;
+        this.precioDeVentas = Math.floor(precioVentasTemp * 100) / 100;
         this.precioDeVentasMasIVA = Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
         this._comisionInmobiliaria = Math.floor(this.precioDeVentasMasIVA * 10) / 100;
         return this.precioDeVentasMasIVA;

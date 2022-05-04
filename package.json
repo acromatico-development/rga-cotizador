@@ -1,6 +1,6 @@
 {
-  "name": "rg-cotizador",
-  "version": "0.0.0",
+  "name": "@rgasesores/cotizador",
+  "version": "0.0.2",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build && cp ./dist/index.d.ts ./dist/cjs && cp ./dist/index.d.ts.map ./dist/cjs"
+    "build": "parcel build && cp ./dist/index.d.ts ./dist/cjs && cp ./dist/index.d.ts.map ./dist/cjs",
+    "test:node": "node tests/nodeTest.js"
   },
   "targets": {
     "main": {
@@ -31,5 +32,6 @@
       "outputFormat": "esmodule",
       "includeNodeModules": true
     }
-  }
+  },
+  "license": "MIT"
 }
