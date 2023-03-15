@@ -304,6 +304,8 @@ export class Cotizador {
     this.precioDeVentas = Math.floor(precioVentasTemp * 100) / 100;
     this.precioDeVentasMasIVA =
       Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
+    this.precioDeVentasMasIVA = Math.ceil(this.precioDeVentasMasIVA / 10) * 10
+    this.precioDeVentas =  Math.floor((this.precioDeVentasMasIVA / 1.16) * 100) / 100;
     this._comisionInmobiliaria =
       Math.floor(this.precioDeVentasMasIVA * 0.1 * 100) / 100;
 

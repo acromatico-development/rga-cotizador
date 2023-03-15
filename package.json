@@ -1,14 +1,14 @@
 {
   "name": "@rgasesores/cotizador",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@parcel/core": "^2.2.1",
-    "@parcel/packager-ts": "^2.2.1",
-    "@parcel/transformer-typescript-types": "^2.2.1",
+    "@parcel/core": "^2.8.3",
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
     "parcel": "latest",
     "postcss": "^8.4.5",
     "typescript": ">=3.0.0"
@@ -33,5 +33,9 @@
       "includeNodeModules": true
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acromatico-development/rga-cotizador"
+  }
 }
