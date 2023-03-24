@@ -135,8 +135,8 @@ export class Cotizador {
     nivelCobertura: NivelCobertura
   ) {
     this.renta = renta;
-    this.estadoGarantia = estadoGarantia;
-    this.estadoFirma = estadoFirma;
+    this.estadoGarantia = estadoGarantia ? estadoGarantia : EstadoEnGarantia["Ciudad de México"];
+    this.estadoFirma = estadoFirma ? estadoFirma : EstadoFirma["Ciudad de México"];
 
     //TO DO: traer variables de fuente externa
     this._investigacionRg = 21;
@@ -302,12 +302,10 @@ export class Cotizador {
     }
 
     this.precioDeVentas = Math.floor(precioVentasTemp * 100) / 100;
-    this.precioDeVentasMasIVA =
-      Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
+    this.precioDeVentasMasIVA = Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
     this.precioDeVentasMasIVA = Math.ceil(this.precioDeVentasMasIVA / 10) * 10
-    this.precioDeVentas =  Math.floor((this.precioDeVentasMasIVA / 1.16) * 100) / 100;
-    this._comisionInmobiliaria =
-      Math.floor(this.precioDeVentasMasIVA * 0.1 * 100) / 100;
+    this.precioDeVentas = Math.floor((this.precioDeVentasMasIVA / 1.16) * 100) / 100;
+    this._comisionInmobiliaria = Math.floor(this.precioDeVentasMasIVA * 0.1 * 100) / 100;
 
     return this.precioDeVentasMasIVA;
   }

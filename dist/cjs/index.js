@@ -97,8 +97,8 @@ let $1ad517f6efcdb4ef$export$6e7b439551acada7;
 class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
     constructor(renta, estadoGarantia, estadoFirma, nivelCobertura){
         this.renta = renta;
-        this.estadoGarantia = estadoGarantia;
-        this.estadoFirma = estadoFirma;
+        this.estadoGarantia = estadoGarantia ? estadoGarantia : $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
+        this.estadoFirma = estadoFirma ? estadoFirma : $1ad517f6efcdb4ef$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
         //TO DO: traer variables de fuente externa
         this._investigacionRg = 21;
         this._perfilRiesgoIncumplimiento = 0.2;
