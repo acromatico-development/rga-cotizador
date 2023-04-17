@@ -7,7 +7,7 @@ let $f0d540db358c20b7$export$f566b60ae4e8e0b3;
     EstadoEnGarantia[EstadoEnGarantia["Campeche"] = 575] = "Campeche";
     EstadoEnGarantia[EstadoEnGarantia["Chiapas"] = 460] = "Chiapas";
     EstadoEnGarantia[EstadoEnGarantia["Chihuahua"] = 460] = "Chihuahua";
-    EstadoEnGarantia[EstadoEnGarantia["Ciudad de M\xe9xico"] = 420] = "Ciudad de M\xe9xico";
+    EstadoEnGarantia[EstadoEnGarantia["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
     EstadoEnGarantia[EstadoEnGarantia["Coahuila de Zaragoza"] = 460] = "Coahuila de Zaragoza";
     EstadoEnGarantia[EstadoEnGarantia["Colima"] = 460] = "Colima";
     EstadoEnGarantia[EstadoEnGarantia["Durango"] = 575] = "Durango";

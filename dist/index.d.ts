@@ -5,7 +5,7 @@ export enum EstadoEnGarantia {
     "Campeche" = 575,
     "Chiapas" = 460,
     "Chihuahua" = 460,
-    "Ciudad de México" = 420,
+    "Ciudad de México" = 500,
     "Coahuila de Zaragoza" = 460,
     "Colima" = 460,
     "Durango" = 575,
