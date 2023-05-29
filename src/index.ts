@@ -91,9 +91,33 @@ type Nivel = {
   coberturas: Coberturas[];
 };
 
+type CpData = {
+  ciudad: string;
+  estado: string;
+  municipio: string;
+  colonias: [string];
+  codigoPostal: string;
+}
+
+// TO DO: Bu
+const permitedCities = [
+  "Cancún",
+  "Ciudad de México",
+  "Cuernavaca",
+  "Guadalajara",
+  "Zapopan",
+  "Mérida",
+  "Monterrey",
+  "San Pedro Garza García",
+  "Pachuca de Soto",
+  "Heroica Puebla de Zaragoza",
+  "Santiago de Querétaro"
+]
+
 export class Cotizador {
   //Variables
   renta: number;
+  cp: string;
   estadoGarantia: EstadoEnGarantia;
   estadoFirma: EstadoFirma;
   nivelCobertura: Nivel | undefined;
@@ -130,92 +154,118 @@ export class Cotizador {
 
   constructor(
     renta: number,
-    estadoGarantia: EstadoEnGarantia,
+    cp: string,
     estadoFirma: EstadoFirma,
     nivelCobertura: NivelCobertura
   ) {
     this.renta = renta;
-    this.estadoGarantia = estadoGarantia ? estadoGarantia : EstadoEnGarantia["Ciudad de México"];
-    this.estadoFirma = estadoFirma ? estadoFirma : EstadoFirma["Ciudad de México"];
 
-    //TO DO: traer variables de fuente externa
-    this._investigacionRg = 21;
-    this._perfilRiesgoIncumplimiento = 0.2;
-    this._perfilRiesgoJuicioRecuperacion = 0.025;
-    this._perfilRiesgoJuicioAdeudos = 0.025;
+    this.getCpData(cp).then((cpData: CpData) => {
+      const permitido = permitedCities.find((city) => city === cpData.ciudad);
 
-    //TO DO: traer constantes de fuente externa
-    this._factorInvestigacion = 1;
-    this._factorSeguro = 0.1308;
-    this._factorFirma = 1;
-    this._factorSolvencia = 1;
-    this._factorIncumplimiento = 180;
-    this._factorRecuperacion = 3718.88;
-    this._factorAdeudos = 14875.51;
+      if(!permitido) {
+        const edomex = cpData.estado === "México";
+        if(!edomex) {
+          console.log("No se encontró la ciudad");
+          throw new Error("No se encontró la ciudad");
+        }
+      }
 
-    //TO DO: traer niveles de fuente externa
-    this._niveles = [
-      {
-        nombre: NivelCobertura.alpha,
-        coberturas: [
-          Coberturas.investigacionRpp,
-          Coberturas.firmaDeContrato,
-          Coberturas.investigacionRG,
-          Coberturas.gestionExtrajudicial,
-          Coberturas.recuperacionInmueble,
-          Coberturas.recuperacionDeAdeudos,
-        ],
+      this.estadoGarantia = EstadoEnGarantia[cpData.estado] ? EstadoEnGarantia[cpData.estado] : EstadoEnGarantia["Ciudad de México"];
+
+      this.estadoFirma = estadoFirma ? estadoFirma : EstadoFirma["Ciudad de México"];
+
+      //TO DO: traer variables de fuente externa
+      this._investigacionRg = 21;
+      this._perfilRiesgoIncumplimiento = 0.2;
+      this._perfilRiesgoJuicioRecuperacion = 0.025;
+      this._perfilRiesgoJuicioAdeudos = 0.025;
+
+      //TO DO: traer constantes de fuente externa
+      this._factorInvestigacion = 1;
+      this._factorSeguro = 0.1308;
+      this._factorFirma = 1;
+      this._factorSolvencia = 1;
+      this._factorIncumplimiento = 180;
+      this._factorRecuperacion = 3718.88;
+      this._factorAdeudos = 14875.51;
+
+      //TO DO: traer niveles de fuente externa
+      this._niveles = [
+        {
+          nombre: NivelCobertura.alpha,
+          coberturas: [
+            Coberturas.investigacionRpp,
+            Coberturas.firmaDeContrato,
+            Coberturas.investigacionRG,
+            Coberturas.gestionExtrajudicial,
+            Coberturas.recuperacionInmueble,
+            Coberturas.recuperacionDeAdeudos,
+          ],
+        },
+        {
+          nombre: NivelCobertura.alphaPlus,
+          coberturas: [
+            Coberturas.investigacionRpp,
+            Coberturas.firmaDeContrato,
+            Coberturas.investigacionRG,
+            Coberturas.gestionExtrajudicial,
+            Coberturas.recuperacionInmueble,
+            Coberturas.recuperacionDeAdeudos,
+            Coberturas.seguro,
+          ],
+        },
+        {
+          nombre: NivelCobertura.lite,
+          coberturas: [
+            Coberturas.investigacionRG,
+            Coberturas.gestionExtrajudicial,
+            Coberturas.recuperacionInmueble,
+          ],
+        },
+      ];
+
+      this.nivelCobertura = this._niveles.find(
+        (niv) => niv.nombre === nivelCobertura
+      )
+        ? this._niveles.find((niv) => niv.nombre === nivelCobertura)
+        : this._niveles[0];
+
+      // axios("https://www.lycklig.com.mx/products/platos-rosa-con-dorado.json")
+      //   .then((data) => console.log(data.data))
+      //   .catch((err) => console.log(err));
+
+      //setear a 0 costos
+      this.costoInvestigacion = 0;
+      this.costoSeguro = 0;
+      this.costoFirma = 0;
+      this.costoInvestigacionRg = 0;
+      this.costoIncumplimiento = 0;
+      this.costoRecuperacion = 0;
+      this.costoAdeudos = 0;
+
+      //setear a 0 cotización
+      this._costoDeVentas = 0;
+      this._utilidad = 0;
+      this.precioDeVentas = 0;
+      this.precioDeVentasMasIVA = 0;
+      this._comisionInmobiliaria = 0;
+
+      this.calcularCostos();
+      this.cotizar();
+
+    });
+  }
+
+  private async getCpData(cp: string) {
+    const ciudad = await fetch(`https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`, {
+      headers: {
+        "X-Acromatico-JWT-Token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o",
       },
-      {
-        nombre: NivelCobertura.alphaPlus,
-        coberturas: [
-          Coberturas.investigacionRpp,
-          Coberturas.firmaDeContrato,
-          Coberturas.investigacionRG,
-          Coberturas.gestionExtrajudicial,
-          Coberturas.recuperacionInmueble,
-          Coberturas.recuperacionDeAdeudos,
-          Coberturas.seguro,
-        ],
-      },
-      {
-        nombre: NivelCobertura.lite,
-        coberturas: [
-          Coberturas.investigacionRG,
-          Coberturas.gestionExtrajudicial,
-          Coberturas.recuperacionInmueble,
-        ],
-      },
-    ];
+    })
 
-    this.nivelCobertura = this._niveles.find(
-      (niv) => niv.nombre === nivelCobertura
-    )
-      ? this._niveles.find((niv) => niv.nombre === nivelCobertura)
-      : this._niveles[0];
-
-    // axios("https://www.lycklig.com.mx/products/platos-rosa-con-dorado.json")
-    //   .then((data) => console.log(data.data))
-    //   .catch((err) => console.log(err));
-
-    //setear a 0 costos
-    this.costoInvestigacion = 0;
-    this.costoSeguro = 0;
-    this.costoFirma = 0;
-    this.costoInvestigacionRg = 0;
-    this.costoIncumplimiento = 0;
-    this.costoRecuperacion = 0;
-    this.costoAdeudos = 0;
-
-    //setear a 0 cotización
-    this._costoDeVentas = 0;
-    this._utilidad = 0;
-    this.precioDeVentas = 0;
-    this.precioDeVentasMasIVA = 0;
-    this._comisionInmobiliaria = 0;
-
-    this.calcularCostos();
-    this.cotizar();
+    return await ciudad.json();
   }
 
   private calculoUtilidad(renta: number): number {
