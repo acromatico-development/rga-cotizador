@@ -1,4 +1,5 @@
 // import axios from "axios";
+import fetch from "node-fetch";
 
 export enum EstadoEnGarantia {
   "Aguascalientes" = 500,
@@ -176,10 +177,7 @@ export class Cotizador {
     this.renta = renta;
 
     this.resolved = new Promise<void>(async (resolve) => {
-      const cpData: CpData = await this.getCpData(cp);
-
-      console.log("cp", cpData);
-
+      const cpData:CpData = await this.getCpData(cp);
       const permitido = permitedCities.find((city) => city === cpData.ciudad);
 
       if (!permitido) {
