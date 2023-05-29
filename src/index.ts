@@ -97,7 +97,7 @@ type CpData = {
   municipio: string;
   colonias: [string];
   codigoPostal: string;
-}
+};
 
 // TO DO: Bu
 const permitedCities = [
@@ -106,13 +106,14 @@ const permitedCities = [
   "Cuernavaca",
   "Guadalajara",
   "Zapopan",
+  "Tlaquepaque",
   "Mérida",
   "Monterrey",
   "San Pedro Garza García",
   "Pachuca de Soto",
   "Heroica Puebla de Zaragoza",
-  "Santiago de Querétaro"
-]
+  "Santiago de Querétaro",
+];
 
 export class Cotizador {
   //Variables
@@ -121,6 +122,7 @@ export class Cotizador {
   estadoGarantia: EstadoEnGarantia;
   estadoFirma: EstadoFirma;
   nivelCobertura: Nivel | undefined;
+  resolved: Promise<void>;
   private _perfilRiesgoIncumplimiento: number;
   private _investigacionRg: number;
   private _perfilRiesgoJuicioRecuperacion: number;
@@ -160,20 +162,28 @@ export class Cotizador {
   ) {
     this.renta = renta;
 
-    this.getCpData(cp).then((cpData: CpData) => {
+    this.resolved = new Promise<void>(async (resolve) => {
+      const cpData: CpData = await this.getCpData(cp);
+
+      console.log("cp", cpData);
+
       const permitido = permitedCities.find((city) => city === cpData.ciudad);
 
-      if(!permitido) {
+      if (!permitido) {
         const edomex = cpData.estado === "México";
-        if(!edomex) {
+        if (!edomex) {
           console.log("No se encontró la ciudad");
           throw new Error("No se encontró la ciudad");
         }
       }
 
-      this.estadoGarantia = EstadoEnGarantia[cpData.estado] ? EstadoEnGarantia[cpData.estado] : EstadoEnGarantia["Ciudad de México"];
+      this.estadoGarantia = EstadoEnGarantia[cpData.estado]
+        ? EstadoEnGarantia[cpData.estado]
+        : EstadoEnGarantia["Ciudad de México"];
 
-      this.estadoFirma = estadoFirma ? estadoFirma : EstadoFirma["Ciudad de México"];
+      this.estadoFirma = estadoFirma
+        ? estadoFirma
+        : EstadoFirma["Ciudad de México"];
 
       //TO DO: traer variables de fuente externa
       this._investigacionRg = 21;
@@ -254,18 +264,25 @@ export class Cotizador {
       this.calcularCostos();
       this.cotizar();
 
+      console.log("Terminando");
+      resolve();
     });
   }
 
   private async getCpData(cp: string) {
-    const ciudad = await fetch(`https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`, {
-      headers: {
-        "X-Acromatico-JWT-Token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o",
-      },
-    })
+    const ciudad = await fetch(
+      `https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`,
+      {
+        headers: {
+          "X-Acromatico-JWT-Token":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o",
+        },
+      }
+    );
 
-    return await ciudad.json();
+    const ciudadData = await ciudad.json();
+
+    return ciudadData;
   }
 
   private calculoUtilidad(renta: number): number {
@@ -352,10 +369,13 @@ export class Cotizador {
     }
 
     this.precioDeVentas = Math.floor(precioVentasTemp * 100) / 100;
-    this.precioDeVentasMasIVA = Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
-    this.precioDeVentasMasIVA = Math.ceil(this.precioDeVentasMasIVA / 10) * 10
-    this.precioDeVentas = Math.floor((this.precioDeVentasMasIVA / 1.16) * 100) / 100;
-    this._comisionInmobiliaria = Math.floor(this.precioDeVentasMasIVA * 0.1 * 100) / 100;
+    this.precioDeVentasMasIVA =
+      Math.floor(this.precioDeVentas * 1.16 * 100) / 100;
+    this.precioDeVentasMasIVA = Math.ceil(this.precioDeVentasMasIVA / 10) * 10;
+    this.precioDeVentas =
+      Math.floor((this.precioDeVentasMasIVA / 1.16) * 100) / 100;
+    this._comisionInmobiliaria =
+      Math.floor(this.precioDeVentasMasIVA * 0.1 * 100) / 100;
 
     return this.precioDeVentasMasIVA;
   }

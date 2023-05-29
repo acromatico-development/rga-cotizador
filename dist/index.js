@@ -1,28 +1,28 @@
 // import axios from "axios";
 let $f0d540db358c20b7$export$f566b60ae4e8e0b3;
 (function(EstadoEnGarantia) {
-    EstadoEnGarantia[EstadoEnGarantia["Aguascalientes"] = 460] = "Aguascalientes";
+    EstadoEnGarantia[EstadoEnGarantia["Aguascalientes"] = 500] = "Aguascalientes";
     EstadoEnGarantia[EstadoEnGarantia["Baja California"] = 3350] = "Baja California";
     EstadoEnGarantia[EstadoEnGarantia["Baja California Sur"] = 3350] = "Baja California Sur";
     EstadoEnGarantia[EstadoEnGarantia["Campeche"] = 575] = "Campeche";
-    EstadoEnGarantia[EstadoEnGarantia["Chiapas"] = 460] = "Chiapas";
-    EstadoEnGarantia[EstadoEnGarantia["Chihuahua"] = 460] = "Chihuahua";
+    EstadoEnGarantia[EstadoEnGarantia["Chiapas"] = 500] = "Chiapas";
+    EstadoEnGarantia[EstadoEnGarantia["Chihuahua"] = 500] = "Chihuahua";
     EstadoEnGarantia[EstadoEnGarantia["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
-    EstadoEnGarantia[EstadoEnGarantia["Coahuila de Zaragoza"] = 460] = "Coahuila de Zaragoza";
-    EstadoEnGarantia[EstadoEnGarantia["Colima"] = 460] = "Colima";
+    EstadoEnGarantia[EstadoEnGarantia["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
+    EstadoEnGarantia[EstadoEnGarantia["Colima"] = 500] = "Colima";
     EstadoEnGarantia[EstadoEnGarantia["Durango"] = 575] = "Durango";
-    EstadoEnGarantia[EstadoEnGarantia["Guanajuato"] = 460] = "Guanajuato";
+    EstadoEnGarantia[EstadoEnGarantia["Guanajuato"] = 500] = "Guanajuato";
     EstadoEnGarantia[EstadoEnGarantia["Guerrero"] = 2050] = "Guerrero";
     EstadoEnGarantia[EstadoEnGarantia["Hidalgo"] = 1050] = "Hidalgo";
     EstadoEnGarantia[EstadoEnGarantia["Jalisco"] = 690] = "Jalisco";
     EstadoEnGarantia[EstadoEnGarantia["M\xe9xico"] = 500] = "M\xe9xico";
     EstadoEnGarantia[EstadoEnGarantia["Michoac\xe1n de Ocampo"] = 1950] = "Michoac\xe1n de Ocampo";
-    EstadoEnGarantia[EstadoEnGarantia["Morelos"] = 460] = "Morelos";
-    EstadoEnGarantia[EstadoEnGarantia["Nayarit"] = 460] = "Nayarit";
+    EstadoEnGarantia[EstadoEnGarantia["Morelos"] = 500] = "Morelos";
+    EstadoEnGarantia[EstadoEnGarantia["Nayarit"] = 500] = "Nayarit";
     EstadoEnGarantia[EstadoEnGarantia["Nuevo Le\xf3n"] = 575] = "Nuevo Le\xf3n";
     EstadoEnGarantia[EstadoEnGarantia["Oaxaca"] = 575] = "Oaxaca";
     EstadoEnGarantia[EstadoEnGarantia["Puebla"] = 1800] = "Puebla";
-    EstadoEnGarantia[EstadoEnGarantia["Quer\xe9taro"] = 460] = "Quer\xe9taro";
+    EstadoEnGarantia[EstadoEnGarantia["Quer\xe9taro"] = 500] = "Quer\xe9taro";
     EstadoEnGarantia[EstadoEnGarantia["Quintana Roo"] = 1200] = "Quintana Roo";
     EstadoEnGarantia[EstadoEnGarantia["San Luis Potos\xed"] = 2200] = "San Luis Potos\xed";
     EstadoEnGarantia[EstadoEnGarantia["Sinaloa"] = 3200] = "Sinaloa";
@@ -85,78 +85,116 @@ let $f0d540db358c20b7$export$6e7b439551acada7;
     Coberturas["recuperacionInmueble"] = "Recuperacion de Inmueble";
     Coberturas["recuperacionDeAdeudos"] = "Recuperacion de Adeudos";
 })($f0d540db358c20b7$export$6e7b439551acada7 || ($f0d540db358c20b7$export$6e7b439551acada7 = {}));
+// TO DO: Bu
+const $f0d540db358c20b7$var$permitedCities = [
+    "Canc\xfan",
+    "Ciudad de M\xe9xico",
+    "Cuernavaca",
+    "Guadalajara",
+    "Zapopan",
+    "Tlaquepaque",
+    "M\xe9rida",
+    "Monterrey",
+    "San Pedro Garza Garc\xeda",
+    "Pachuca de Soto",
+    "Heroica Puebla de Zaragoza",
+    "Santiago de Quer\xe9taro"
+];
 class $f0d540db358c20b7$export$3bbcb4831e58d00d {
-    constructor(renta, estadoGarantia, estadoFirma, nivelCobertura){
+    constructor(renta, cp, estadoFirma, nivelCobertura){
         this.renta = renta;
-        this.estadoGarantia = estadoGarantia ? estadoGarantia : $f0d540db358c20b7$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
-        this.estadoFirma = estadoFirma ? estadoFirma : $f0d540db358c20b7$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
-        //TO DO: traer variables de fuente externa
-        this._investigacionRg = 21;
-        this._perfilRiesgoIncumplimiento = 0.2;
-        this._perfilRiesgoJuicioRecuperacion = 0.025;
-        this._perfilRiesgoJuicioAdeudos = 0.025;
-        //TO DO: traer constantes de fuente externa
-        this._factorInvestigacion = 1;
-        this._factorSeguro = 0.1308;
-        this._factorFirma = 1;
-        this._factorSolvencia = 1;
-        this._factorIncumplimiento = 180;
-        this._factorRecuperacion = 3718.88;
-        this._factorAdeudos = 14875.51;
-        //TO DO: traer niveles de fuente externa
-        this._niveles = [
-            {
-                nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.alpha,
-                coberturas: [
-                    $f0d540db358c20b7$export$6e7b439551acada7.investigacionRpp,
-                    $f0d540db358c20b7$export$6e7b439551acada7.firmaDeContrato,
-                    $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
-                    $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
-                    $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble,
-                    $f0d540db358c20b7$export$6e7b439551acada7.recuperacionDeAdeudos
-                ]
-            },
-            {
-                nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.alphaPlus,
-                coberturas: [
-                    $f0d540db358c20b7$export$6e7b439551acada7.investigacionRpp,
-                    $f0d540db358c20b7$export$6e7b439551acada7.firmaDeContrato,
-                    $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
-                    $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
-                    $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble,
-                    $f0d540db358c20b7$export$6e7b439551acada7.recuperacionDeAdeudos,
-                    $f0d540db358c20b7$export$6e7b439551acada7.seguro
-                ]
-            },
-            {
-                nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.lite,
-                coberturas: [
-                    $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
-                    $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
-                    $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble
-                ]
+        this.resolved = new Promise(async (resolve)=>{
+            const cpData = await this.getCpData(cp);
+            console.log("cp", cpData);
+            const permitido = $f0d540db358c20b7$var$permitedCities.find((city)=>city === cpData.ciudad);
+            if (!permitido) {
+                const edomex = cpData.estado === "M\xe9xico";
+                if (!edomex) {
+                    console.log("No se encontr\xf3 la ciudad");
+                    throw new Error("No se encontr\xf3 la ciudad");
+                }
             }
-        ];
-        this.nivelCobertura = this._niveles.find((niv)=>niv.nombre === nivelCobertura) ? this._niveles.find((niv)=>niv.nombre === nivelCobertura) : this._niveles[0];
-        // axios("https://www.lycklig.com.mx/products/platos-rosa-con-dorado.json")
-        //   .then((data) => console.log(data.data))
-        //   .catch((err) => console.log(err));
-        //setear a 0 costos
-        this.costoInvestigacion = 0;
-        this.costoSeguro = 0;
-        this.costoFirma = 0;
-        this.costoInvestigacionRg = 0;
-        this.costoIncumplimiento = 0;
-        this.costoRecuperacion = 0;
-        this.costoAdeudos = 0;
-        //setear a 0 cotización
-        this._costoDeVentas = 0;
-        this._utilidad = 0;
-        this.precioDeVentas = 0;
-        this.precioDeVentasMasIVA = 0;
-        this._comisionInmobiliaria = 0;
-        this.calcularCostos();
-        this.cotizar();
+            this.estadoGarantia = $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] ? $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] : $f0d540db358c20b7$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
+            this.estadoFirma = estadoFirma ? estadoFirma : $f0d540db358c20b7$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
+            //TO DO: traer variables de fuente externa
+            this._investigacionRg = 21;
+            this._perfilRiesgoIncumplimiento = 0.2;
+            this._perfilRiesgoJuicioRecuperacion = 0.025;
+            this._perfilRiesgoJuicioAdeudos = 0.025;
+            //TO DO: traer constantes de fuente externa
+            this._factorInvestigacion = 1;
+            this._factorSeguro = 0.1308;
+            this._factorFirma = 1;
+            this._factorSolvencia = 1;
+            this._factorIncumplimiento = 180;
+            this._factorRecuperacion = 3718.88;
+            this._factorAdeudos = 14875.51;
+            //TO DO: traer niveles de fuente externa
+            this._niveles = [
+                {
+                    nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.alpha,
+                    coberturas: [
+                        $f0d540db358c20b7$export$6e7b439551acada7.investigacionRpp,
+                        $f0d540db358c20b7$export$6e7b439551acada7.firmaDeContrato,
+                        $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
+                        $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
+                        $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble,
+                        $f0d540db358c20b7$export$6e7b439551acada7.recuperacionDeAdeudos
+                    ]
+                },
+                {
+                    nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.alphaPlus,
+                    coberturas: [
+                        $f0d540db358c20b7$export$6e7b439551acada7.investigacionRpp,
+                        $f0d540db358c20b7$export$6e7b439551acada7.firmaDeContrato,
+                        $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
+                        $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
+                        $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble,
+                        $f0d540db358c20b7$export$6e7b439551acada7.recuperacionDeAdeudos,
+                        $f0d540db358c20b7$export$6e7b439551acada7.seguro
+                    ]
+                },
+                {
+                    nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.lite,
+                    coberturas: [
+                        $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
+                        $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
+                        $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble
+                    ]
+                }
+            ];
+            this.nivelCobertura = this._niveles.find((niv)=>niv.nombre === nivelCobertura) ? this._niveles.find((niv)=>niv.nombre === nivelCobertura) : this._niveles[0];
+            // axios("https://www.lycklig.com.mx/products/platos-rosa-con-dorado.json")
+            //   .then((data) => console.log(data.data))
+            //   .catch((err) => console.log(err));
+            //setear a 0 costos
+            this.costoInvestigacion = 0;
+            this.costoSeguro = 0;
+            this.costoFirma = 0;
+            this.costoInvestigacionRg = 0;
+            this.costoIncumplimiento = 0;
+            this.costoRecuperacion = 0;
+            this.costoAdeudos = 0;
+            //setear a 0 cotización
+            this._costoDeVentas = 0;
+            this._utilidad = 0;
+            this.precioDeVentas = 0;
+            this.precioDeVentasMasIVA = 0;
+            this._comisionInmobiliaria = 0;
+            this.calcularCostos();
+            this.cotizar();
+            console.log("Terminando");
+            resolve();
+        });
+    }
+    async getCpData(cp) {
+        const ciudad = await fetch(`https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`, {
+            headers: {
+                "X-Acromatico-JWT-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o"
+            }
+        });
+        const ciudadData = await ciudad.json();
+        return ciudadData;
     }
     calculoUtilidad(renta) {
         let resultado;

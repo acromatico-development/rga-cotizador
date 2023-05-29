@@ -1,26 +1,26 @@
 export enum EstadoEnGarantia {
-    "Aguascalientes" = 460,
+    "Aguascalientes" = 500,
     "Baja California" = 3350,
     "Baja California Sur" = 3350,
     "Campeche" = 575,
-    "Chiapas" = 460,
-    "Chihuahua" = 460,
+    "Chiapas" = 500,
+    "Chihuahua" = 500,
     "Ciudad de México" = 500,
-    "Coahuila de Zaragoza" = 460,
-    "Colima" = 460,
+    "Coahuila de Zaragoza" = 500,
+    "Colima" = 500,
     "Durango" = 575,
-    "Guanajuato" = 460,
+    "Guanajuato" = 500,
     "Guerrero" = 2050,
     "Hidalgo" = 1050,
     "Jalisco" = 690,
     "México" = 500,
     "Michoacán de Ocampo" = 1950,
-    "Morelos" = 460,
-    "Nayarit" = 460,
+    "Morelos" = 500,
+    "Nayarit" = 500,
     "Nuevo León" = 575,
     "Oaxaca" = 575,
     "Puebla" = 1800,
-    "Querétaro" = 460,
+    "Querétaro" = 500,
     "Quintana Roo" = 1200,
     "San Luis Potosí" = 2200,
     "Sinaloa" = 3200,
@@ -86,9 +86,11 @@ type Nivel = {
 };
 export class Cotizador {
     renta: number;
+    cp: string;
     estadoGarantia: EstadoEnGarantia;
     estadoFirma: EstadoFirma;
     nivelCobertura: Nivel | undefined;
+    resolved: Promise<void>;
     costoInvestigacion: number;
     costoSeguro: number;
     costoFirma: number;
@@ -98,7 +100,7 @@ export class Cotizador {
     costoAdeudos: number;
     precioDeVentas: number;
     precioDeVentasMasIVA: number;
-    constructor(renta: number, estadoGarantia: EstadoEnGarantia, estadoFirma: EstadoFirma, nivelCobertura: NivelCobertura);
+    constructor(renta: number, cp: string, estadoFirma: EstadoFirma, nivelCobertura: NivelCobertura);
     calcularCostos(): void;
     cotizar(): number;
     cambiarRenta(renta: number): number;
