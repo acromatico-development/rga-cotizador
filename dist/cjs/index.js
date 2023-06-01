@@ -5557,7 +5557,8 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
     constructor(renta, cp, estadoFirma, nivelCobertura){
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
-            const cpData = await this.getCpData(cp);
+            //@ts-ignore
+            var cpData = await this.getCpData(cp);
             const permitido = $1ad517f6efcdb4ef$var$permitedCities.find((city)=>city === cpData.ciudad);
             if (!permitido) {
                 const edomex = cpData.estado === "M\xe9xico";
@@ -5566,6 +5567,7 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
                     throw new Error("No se encontr\xf3 la ciudad");
                 }
             }
+            //@ts-ignore
             this.estadoGarantia = $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] ? $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] : $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $1ad517f6efcdb4ef$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa

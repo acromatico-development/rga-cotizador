@@ -93,11 +93,11 @@ type Nivel = {
 };
 
 type CpData = {
-  ciudad: string;
-  estado: string;
-  municipio: string;
-  colonias: [string];
-  codigoPostal: string;
+  codigoPostal?: string;
+  estado?: string;
+  ciudad?: string;
+  municipio?: string;
+  colonias?: [string];
 };
 
 // TO DO: Bu
@@ -177,7 +177,8 @@ export class Cotizador {
     this.renta = renta;
 
     this.resolved = new Promise<void>(async (resolve) => {
-      const cpData:CpData = await this.getCpData(cp);
+      //@ts-ignore
+      var cpData:CpData = await this.getCpData(cp); 
       const permitido = permitedCities.find((city) => city === cpData.ciudad);
 
       if (!permitido) {
@@ -187,8 +188,9 @@ export class Cotizador {
           throw new Error("No se encontró la ciudad");
         }
       }
-
+    //@ts-ignore
       this.estadoGarantia = EstadoEnGarantia[cpData.estado]
+      //@ts-ignore
         ? EstadoEnGarantia[cpData.estado]
         : EstadoEnGarantia["Ciudad de México"];
 
