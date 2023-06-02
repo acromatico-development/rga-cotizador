@@ -177,7 +177,7 @@ export class Cotizador {
     this.renta = renta;
 
     this.resolved = new Promise<void>(async (resolve) => {
-      var cpData:CpData = await this.getCpData(cp); 
+      var cpData: CpData = await this.getCpData(cp);
       const permitido = permitedCities.find((city) => city === cpData.ciudad);
 
       if (!permitido) {
