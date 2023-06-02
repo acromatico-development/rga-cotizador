@@ -1,6 +1,6 @@
 {
   "name": "@rgasesores/cotizador",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -9,6 +9,7 @@
     "@parcel/core": "^2.8.3",
     "@parcel/packager-ts": "^2.8.3",
     "@parcel/transformer-typescript-types": "^2.8.3",
+    "@types/node": "^20.2.5",
     "parcel": "latest",
     "postcss": "^8.4.5",
     "typescript": ">=3.0.0"

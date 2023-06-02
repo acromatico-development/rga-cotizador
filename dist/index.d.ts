@@ -1,4 +1,4 @@
-export enum EstadoEnGarantia {
+enum EstadoEnGarantia {
     "Aguascalientes" = 500,
     "Baja California" = 3350,
     "Baja California Sur" = 3350,
@@ -84,6 +84,7 @@ type Nivel = {
     nombre: NivelCobertura;
     coberturas: Coberturas[];
 };
+export const permitedCities: string[];
 export class Cotizador {
     renta: number;
     cp: string;

@@ -4012,10 +4012,10 @@ module.exports = globalThis.DOMException;
 
 
 
-$parcel$export(module.exports, "EstadoEnGarantia", () => $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3);
 $parcel$export(module.exports, "EstadoFirma", () => $1ad517f6efcdb4ef$export$4d1c8da1ae941898);
 $parcel$export(module.exports, "NivelCobertura", () => $1ad517f6efcdb4ef$export$8250b6f35bc15c68);
 $parcel$export(module.exports, "Coberturas", () => $1ad517f6efcdb4ef$export$6e7b439551acada7);
+$parcel$export(module.exports, "permitedCities", () => $1ad517f6efcdb4ef$export$d513154d1ace596d);
 $parcel$export(module.exports, "Cotizador", () => $1ad517f6efcdb4ef$export$3bbcb4831e58d00d);
 // import axios from "axios";
 /**
@@ -5405,41 +5405,41 @@ function $40f9cb52622e3ba0$var$fixResponseChunkedTransferBadEnding(request, erro
 }
 
 
-var $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3;
-(function($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3) {
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Aguascalientes"] = 500] = "Aguascalientes";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California"] = 3350] = "Baja California";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California Sur"] = 3350] = "Baja California Sur";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Campeche"] = 575] = "Campeche";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chiapas"] = 500] = "Chiapas";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chihuahua"] = 500] = "Chihuahua";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Colima"] = 500] = "Colima";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Durango"] = 575] = "Durango";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guanajuato"] = 500] = "Guanajuato";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guerrero"] = 2050] = "Guerrero";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Hidalgo"] = 1050] = "Hidalgo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Jalisco"] = 690] = "Jalisco";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["M\xe9xico"] = 500] = "M\xe9xico";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Michoac\xe1n de Ocampo"] = 1950] = "Michoac\xe1n de Ocampo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Morelos"] = 500] = "Morelos";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nayarit"] = 500] = "Nayarit";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nuevo Le\xf3n"] = 575] = "Nuevo Le\xf3n";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Oaxaca"] = 575] = "Oaxaca";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Puebla"] = 1800] = "Puebla";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Quer\xe9taro"] = 500] = "Quer\xe9taro";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Quintana Roo"] = 1200] = "Quintana Roo";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["San Luis Potos\xed"] = 2200] = "San Luis Potos\xed";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sinaloa"] = 3200] = "Sinaloa";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sonora"] = 3000] = "Sonora";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tabasco"] = 575] = "Tabasco";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tamaulipas"] = 575] = "Tamaulipas";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tlaxcala"] = 1450] = "Tlaxcala";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
-    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Zacatecas"] = 575] = "Zacatecas";
-})($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 || ($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 = {}));
+var $1ad517f6efcdb4ef$var$EstadoEnGarantia;
+(function($1ad517f6efcdb4ef$var$EstadoEnGarantia) {
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Aguascalientes"] = 500] = "Aguascalientes";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Baja California"] = 3350] = "Baja California";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Baja California Sur"] = 3350] = "Baja California Sur";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Campeche"] = 575] = "Campeche";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Chiapas"] = 500] = "Chiapas";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Chihuahua"] = 500] = "Chihuahua";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Colima"] = 500] = "Colima";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Durango"] = 575] = "Durango";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Guanajuato"] = 500] = "Guanajuato";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Guerrero"] = 2050] = "Guerrero";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Hidalgo"] = 1050] = "Hidalgo";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Jalisco"] = 690] = "Jalisco";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["M\xe9xico"] = 500] = "M\xe9xico";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Michoac\xe1n de Ocampo"] = 1950] = "Michoac\xe1n de Ocampo";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Morelos"] = 500] = "Morelos";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Nayarit"] = 500] = "Nayarit";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Nuevo Le\xf3n"] = 575] = "Nuevo Le\xf3n";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Oaxaca"] = 575] = "Oaxaca";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Puebla"] = 1800] = "Puebla";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Quer\xe9taro"] = 500] = "Quer\xe9taro";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Quintana Roo"] = 1200] = "Quintana Roo";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["San Luis Potos\xed"] = 2200] = "San Luis Potos\xed";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Sinaloa"] = 3200] = "Sinaloa";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Sonora"] = 3000] = "Sonora";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tabasco"] = 575] = "Tabasco";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tamaulipas"] = 575] = "Tamaulipas";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tlaxcala"] = 1450] = "Tlaxcala";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
+    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Zacatecas"] = 575] = "Zacatecas";
+})($1ad517f6efcdb4ef$var$EstadoEnGarantia || ($1ad517f6efcdb4ef$var$EstadoEnGarantia = {}));
 var $1ad517f6efcdb4ef$export$4d1c8da1ae941898;
 (function($1ad517f6efcdb4ef$export$4d1c8da1ae941898) {
     $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Aguascalientes"] = 5000] = "Aguascalientes";
@@ -5491,8 +5491,7 @@ var $1ad517f6efcdb4ef$export$6e7b439551acada7;
     $1ad517f6efcdb4ef$export$6e7b439551acada7["recuperacionInmueble"] = "Recuperacion de Inmueble";
     $1ad517f6efcdb4ef$export$6e7b439551acada7["recuperacionDeAdeudos"] = "Recuperacion de Adeudos";
 })($1ad517f6efcdb4ef$export$6e7b439551acada7 || ($1ad517f6efcdb4ef$export$6e7b439551acada7 = {}));
-// TO DO: Bu
-const $1ad517f6efcdb4ef$var$permitedCities = [
+const $1ad517f6efcdb4ef$export$d513154d1ace596d = [
     "Canc\xfan",
     "Ciudad de M\xe9xico",
     "Cuernavaca",
@@ -5557,18 +5556,13 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
     constructor(renta, cp, estadoFirma, nivelCobertura){
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
-            //@ts-ignore
             var cpData = await this.getCpData(cp);
-            const permitido = $1ad517f6efcdb4ef$var$permitedCities.find((city)=>city === cpData.ciudad);
+            const permitido = $1ad517f6efcdb4ef$export$d513154d1ace596d.find((city)=>city === cpData.ciudad);
             if (!permitido) {
                 const edomex = cpData.estado === "M\xe9xico";
-                if (!edomex) {
-                    console.log("No se encontr\xf3 la ciudad");
-                    throw new Error("No se encontr\xf3 la ciudad");
-                }
+                if (!edomex) throw new Error("No se encontr\xf3 la ciudad");
             }
-            //@ts-ignore
-            this.estadoGarantia = $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] ? $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] : $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
+            this.estadoGarantia = $1ad517f6efcdb4ef$var$EstadoEnGarantia[cpData.estado] ? $1ad517f6efcdb4ef$var$EstadoEnGarantia[cpData.estado] : $1ad517f6efcdb4ef$var$EstadoEnGarantia["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $1ad517f6efcdb4ef$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa
             this._investigacionRg = 21;

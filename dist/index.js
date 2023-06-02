@@ -5404,7 +5404,7 @@ function $d0169d43d1e21383$var$fixResponseChunkedTransferBadEnding(request, erro
 }
 
 
-var $f0d540db358c20b7$export$f566b60ae4e8e0b3;
+var $f0d540db358c20b7$var$EstadoEnGarantia;
 (function(EstadoEnGarantia) {
     EstadoEnGarantia[EstadoEnGarantia["Aguascalientes"] = 500] = "Aguascalientes";
     EstadoEnGarantia[EstadoEnGarantia["Baja California"] = 3350] = "Baja California";
@@ -5438,7 +5438,7 @@ var $f0d540db358c20b7$export$f566b60ae4e8e0b3;
     EstadoEnGarantia[EstadoEnGarantia["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
     EstadoEnGarantia[EstadoEnGarantia["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
     EstadoEnGarantia[EstadoEnGarantia["Zacatecas"] = 575] = "Zacatecas";
-})($f0d540db358c20b7$export$f566b60ae4e8e0b3 || ($f0d540db358c20b7$export$f566b60ae4e8e0b3 = {}));
+})($f0d540db358c20b7$var$EstadoEnGarantia || ($f0d540db358c20b7$var$EstadoEnGarantia = {}));
 var $f0d540db358c20b7$export$4d1c8da1ae941898;
 (function(EstadoFirma) {
     EstadoFirma[EstadoFirma["Aguascalientes"] = 5000] = "Aguascalientes";
@@ -5490,8 +5490,7 @@ var $f0d540db358c20b7$export$6e7b439551acada7;
     Coberturas["recuperacionInmueble"] = "Recuperacion de Inmueble";
     Coberturas["recuperacionDeAdeudos"] = "Recuperacion de Adeudos";
 })($f0d540db358c20b7$export$6e7b439551acada7 || ($f0d540db358c20b7$export$6e7b439551acada7 = {}));
-// TO DO: Bu
-const $f0d540db358c20b7$var$permitedCities = [
+const $f0d540db358c20b7$export$d513154d1ace596d = [
     "Canc\xfan",
     "Ciudad de M\xe9xico",
     "Cuernavaca",
@@ -5522,18 +5521,13 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
     constructor(renta, cp, estadoFirma, nivelCobertura){
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
-            //@ts-ignore
             var cpData = await this.getCpData(cp);
-            const permitido = $f0d540db358c20b7$var$permitedCities.find((city)=>city === cpData.ciudad);
+            const permitido = $f0d540db358c20b7$export$d513154d1ace596d.find((city)=>city === cpData.ciudad);
             if (!permitido) {
                 const edomex = cpData.estado === "M\xe9xico";
-                if (!edomex) {
-                    console.log("No se encontr\xf3 la ciudad");
-                    throw new Error("No se encontr\xf3 la ciudad");
-                }
+                if (!edomex) throw new Error("No se encontr\xf3 la ciudad");
             }
-            //@ts-ignore
-            this.estadoGarantia = $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] ? $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] : $f0d540db358c20b7$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
+            this.estadoGarantia = $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] ? $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] : $f0d540db358c20b7$var$EstadoEnGarantia["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $f0d540db358c20b7$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa
             this._investigacionRg = 21;
@@ -5672,5 +5666,5 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
 }
 
 
-export {$f0d540db358c20b7$export$f566b60ae4e8e0b3 as EstadoEnGarantia, $f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador};
+export {$f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$d513154d1ace596d as permitedCities, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador};
 //# sourceMappingURL=index.js.map
