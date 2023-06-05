@@ -1,5 +1,4 @@
-// import axios from "axios";
-import fetch from "node-fetch";
+import axios from "axios";
 
 enum EstadoEnGarantia {
   "Aguascalientes" = 500,
@@ -279,7 +278,17 @@ export class Cotizador {
   }
 
   private async getCpData(cp: string) {
-    const ciudad = await fetch(
+    // const ciudad = await fetch(
+    //   `https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`,
+    //   {
+    //     headers: {
+    //       "X-Acromatico-JWT-Token":
+    //         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o",
+    //     },
+    //   }
+    // );
+
+    const ciudadData = await axios.get(
       `https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`,
       {
         headers: {
@@ -288,10 +297,9 @@ export class Cotizador {
         },
       }
     );
+    // const ciudadData = await ciudad.json();
 
-    const ciudadData = await ciudad.json();
-
-    return ciudadData;
+    return ciudadData.data;
   }
 
   private calculoUtilidad(renta: number): number {
