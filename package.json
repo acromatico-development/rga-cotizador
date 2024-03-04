@@ -1,6 +1,6 @@
 {
   "name": "@rgasesores/cotizador",
-  "version": "1.0.8",
+  "version": "1.9.0",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",

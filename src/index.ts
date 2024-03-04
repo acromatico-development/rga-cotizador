@@ -289,7 +289,7 @@ export class Cotizador {
     // );
 
     const ciudadData = await axios.get(
-      `https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`,
+      `https://cps-app.acromatico.dev/api/cp/${cp}`,
       {
         headers: {
           "X-Acromatico-JWT-Token":
