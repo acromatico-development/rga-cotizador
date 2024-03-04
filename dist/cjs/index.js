@@ -5098,7 +5098,7 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
         //     },
         //   }
         // );
-        const ciudadData = await (0, $5656c3818dc05961$export$2e2bcd8739ae039).get(`https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`, {
+        const ciudadData = await (0, $5656c3818dc05961$export$2e2bcd8739ae039).get(`https://cps-app.acromatico.dev/api/cp/${cp}`, {
             headers: {
                 "X-Acromatico-JWT-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o"
             }
