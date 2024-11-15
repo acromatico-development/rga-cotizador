@@ -177,14 +177,14 @@ export class Cotizador {
 
     this.resolved = new Promise<void>(async (resolve) => {
       var cpData: CpData = await this.getCpData(cp);
-      const permitido = permitedCities.find((city) => city === cpData.ciudad);
-
-      if (!permitido) {
-        const edomex = cpData.estado === "México";
-        if (!edomex) {
-          throw new Error("No se encontró la ciudad");
-        }
-      }
+      // const permitido = permitedCities.find((city) => city === cpData.ciudad);
+    
+      // if (!permitido) {
+      //   const edomex = cpData.estado === "México";
+      //   if (!edomex) {
+      //     throw new Error("No se encontró la ciudad");
+      //   }
+      // }
       this.estadoGarantia = EstadoEnGarantia[cpData.estado]
         ? EstadoEnGarantia[cpData.estado]
         : EstadoEnGarantia["Ciudad de México"];
@@ -289,7 +289,7 @@ export class Cotizador {
     // );
 
     const ciudadData = await axios.get(
-      `https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`,
+      `https://cps-app.acromatico.dev/api/cp/${cp}`,
       {
         headers: {
           "X-Acromatico-JWT-Token":

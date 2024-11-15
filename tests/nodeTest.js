@@ -6,7 +6,7 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
 (async function testCepomex() {
   const cotizacion = new cliente.Cotizador(
     15900,
-    "45500",
+    "45850",
     cliente.EstadoFirma[variableEstadoCepomex],
     cliente.NivelCobertura.alpha
   );
@@ -24,7 +24,7 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   
   const cotizacionSinFiador = new cliente.Cotizador(
     15900,
-    "03920",
+    "45850",
     cliente.EstadoFirma[variableEstadoFirma],
     cliente.NivelCobertura.alpha
   );
@@ -38,7 +38,7 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   
   const cotizacionObligado = new cliente.Cotizador(
     15900,
-    "03920",
+    "45850",
     cliente.EstadoFirma[variableEstadoCepomex],
     cliente.NivelCobertura.alpha
   );
@@ -52,7 +52,7 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   
   const cotizacionGarantiaSinFirma = new cliente.Cotizador(
     15900,
-    "03920",
+    "45850",
     cliente.EstadoFirma[variableEstadoCepomex],
     cliente.NivelCobertura.alpha
   );

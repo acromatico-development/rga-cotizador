@@ -2602,11 +2602,6 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
             var cpData = await this.getCpData(cp);
-            const permitido = $f0d540db358c20b7$export$d513154d1ace596d.find((city)=>city === cpData.ciudad);
-            if (!permitido) {
-                const edomex = cpData.estado === "M\xe9xico";
-                if (!edomex) throw new Error("No se encontr\xf3 la ciudad");
-            }
             this.estadoGarantia = $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] ? $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] : $f0d540db358c20b7$var$EstadoEnGarantia["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $f0d540db358c20b7$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa
@@ -2690,7 +2685,7 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
         //     },
         //   }
         // );
-        const ciudadData = await (0, $17266311a3707a01$export$2e2bcd8739ae039).get(`https://acromatico-cp.uc.r.appspot.com/api/cp/${cp}`, {
+        const ciudadData = await (0, $17266311a3707a01$export$2e2bcd8739ae039).get(`https://cps-app.acromatico.dev/api/cp/${cp}`, {
             headers: {
                 "X-Acromatico-JWT-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o"
             }
