@@ -1,15 +1,20 @@
 const cliente = require("../dist/cjs/index");
-variableEstadoCepomex = "Ciudad de México";
-variableEstadoFirma = "Baja California Sur";
-variableEstadoGarantia = "Coahuila de Zaragoza";
+const variableEstadoCepomex = "Ciudad de México";
+const variableEstadoFirma = "Baja California Sur";
+const variableEstadoGarantia = "Coahuila de Zaragoza";
+
+const renta = 10000;
+const cobertura = cliente.NivelCobertura.lite;
 
 (async function testCepomex() {
   const cotizacion = new cliente.Cotizador(
-    15900,
-    "45850",
-    cliente.EstadoFirma[variableEstadoCepomex],
-    cliente.NivelCobertura.alpha
+    renta,
+    "56600",
+    cliente.EstadoEnGarantia[variableEstadoGarantia],
+    cobertura
   );
+
+
   
   await cotizacion.resolved;
   
@@ -23,10 +28,10 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   );
   
   const cotizacionSinFiador = new cliente.Cotizador(
-    15900,
-    "45850",
+    renta,
+    "56600",
     cliente.EstadoFirma[variableEstadoFirma],
-    cliente.NivelCobertura.alpha
+    cobertura
   );
   
   await cotizacionSinFiador.resolved;
@@ -37,10 +42,10 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   );
   
   const cotizacionObligado = new cliente.Cotizador(
-    15900,
-    "45850",
+    renta,
+    "56600",
     cliente.EstadoFirma[variableEstadoCepomex],
-    cliente.NivelCobertura.alpha
+    cobertura
   );
   
   await cotizacionObligado.resolved;
@@ -51,10 +56,10 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   );
   
   const cotizacionGarantiaSinFirma = new cliente.Cotizador(
-    15900,
-    "45850",
+    renta,
+    "56600",
     cliente.EstadoFirma[variableEstadoCepomex],
-    cliente.NivelCobertura.alpha
+    cobertura
   );
   
   await cotizacionGarantiaSinFirma.resolved;
@@ -65,10 +70,10 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   );
   
   const cotizacionGarantia = new cliente.Cotizador(
-    15900,
-    "03100",
+    renta,
+    "56600",
     cliente.EstadoFirma[variableEstadoFirma],
-    cliente.NivelCobertura.alpha
+    cobertura
   );
   
   await cotizacionGarantia.resolved;
@@ -78,10 +83,10 @@ variableEstadoGarantia = "Coahuila de Zaragoza";
   );
   
   const cotizacionGarantiaSinFiadorSinFirma = new cliente.Cotizador(
-    15900,
-    "03920",
+    renta,
+    "56600",
     cliente.EstadoFirma[variableEstadoCepomex],
-    cliente.NivelCobertura.alpha
+    cobertura
   );
   
   await cotizacionGarantiaSinFiadorSinFirma.resolved;

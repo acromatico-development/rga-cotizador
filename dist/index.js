@@ -2484,7 +2484,7 @@ $17266311a3707a01$export$2e2bcd8739ae039 = $17266311a3707a01$var$axios;
 const { Axios: $445ebc633fbd01bb$export$1c00760e9e5a4e95 , AxiosError: $445ebc633fbd01bb$export$c1fbed17c2f6a328 , CanceledError: $445ebc633fbd01bb$export$1ab0c6b20d94fa14 , isCancel: $445ebc633fbd01bb$export$3b22524397b493c6 , CancelToken: $445ebc633fbd01bb$export$fd08e3cb425f0d61 , VERSION: $445ebc633fbd01bb$export$a4ad2735b021c132 , all: $445ebc633fbd01bb$export$84bf76cd7afc7469 , Cancel: $445ebc633fbd01bb$export$848c9b7ead0df967 , isAxiosError: $445ebc633fbd01bb$export$fbafdbe06a5b5a9a , spread: $445ebc633fbd01bb$export$3ae0fd4797ed47c8 , toFormData: $445ebc633fbd01bb$export$10ae0d317ea97f8b , AxiosHeaders: $445ebc633fbd01bb$export$4e7d6ff0f3e6520 , HttpStatusCode: $445ebc633fbd01bb$export$a972f69c851492b3 , formToJSON: $445ebc633fbd01bb$export$86d7c59254d6a2c9 , mergeConfig: $445ebc633fbd01bb$export$7ec1ebcfa9d8bd6a  } = (0, $17266311a3707a01$export$2e2bcd8739ae039);
 
 
-var $f0d540db358c20b7$var$EstadoEnGarantia;
+var $f0d540db358c20b7$export$f566b60ae4e8e0b3;
 (function(EstadoEnGarantia) {
     EstadoEnGarantia[EstadoEnGarantia["Aguascalientes"] = 500] = "Aguascalientes";
     EstadoEnGarantia[EstadoEnGarantia["Baja California"] = 3350] = "Baja California";
@@ -2492,7 +2492,7 @@ var $f0d540db358c20b7$var$EstadoEnGarantia;
     EstadoEnGarantia[EstadoEnGarantia["Campeche"] = 575] = "Campeche";
     EstadoEnGarantia[EstadoEnGarantia["Chiapas"] = 500] = "Chiapas";
     EstadoEnGarantia[EstadoEnGarantia["Chihuahua"] = 500] = "Chihuahua";
-    EstadoEnGarantia[EstadoEnGarantia["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
+    EstadoEnGarantia[EstadoEnGarantia["Ciudad de M\xe9xico"] = 550] = "Ciudad de M\xe9xico";
     EstadoEnGarantia[EstadoEnGarantia["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
     EstadoEnGarantia[EstadoEnGarantia["Colima"] = 500] = "Colima";
     EstadoEnGarantia[EstadoEnGarantia["Durango"] = 575] = "Durango";
@@ -2518,7 +2518,7 @@ var $f0d540db358c20b7$var$EstadoEnGarantia;
     EstadoEnGarantia[EstadoEnGarantia["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
     EstadoEnGarantia[EstadoEnGarantia["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
     EstadoEnGarantia[EstadoEnGarantia["Zacatecas"] = 575] = "Zacatecas";
-})($f0d540db358c20b7$var$EstadoEnGarantia || ($f0d540db358c20b7$var$EstadoEnGarantia = {}));
+})($f0d540db358c20b7$export$f566b60ae4e8e0b3 || ($f0d540db358c20b7$export$f566b60ae4e8e0b3 = {}));
 var $f0d540db358c20b7$export$4d1c8da1ae941898;
 (function(EstadoFirma) {
     EstadoFirma[EstadoFirma["Aguascalientes"] = 5000] = "Aguascalientes";
@@ -2602,7 +2602,14 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
             var cpData = await this.getCpData(cp);
-            this.estadoGarantia = $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] ? $f0d540db358c20b7$var$EstadoEnGarantia[cpData.estado] : $f0d540db358c20b7$var$EstadoEnGarantia["Ciudad de M\xe9xico"];
+            // const permitido = permitedCities.find((city) => city === cpData.ciudad);
+            // if (!permitido) {
+            //   const edomex = cpData.estado === "México";
+            //   if (!edomex) {
+            //     throw new Error("No se encontró la ciudad");
+            //   }
+            // }
+            this.estadoGarantia = $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] ? $f0d540db358c20b7$export$f566b60ae4e8e0b3[cpData.estado] : $f0d540db358c20b7$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $f0d540db358c20b7$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa
             this._investigacionRg = 21;
@@ -2646,7 +2653,7 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
                     nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.lite,
                     coberturas: [
                         $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
-                        $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
+                        // Coberturas.gestionExtrajudicial,k
                         $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble
                     ]
                 }
@@ -2685,7 +2692,7 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
         //     },
         //   }
         // );
-        const ciudadData = await (0, $17266311a3707a01$export$2e2bcd8739ae039).get(`https://cps-app.acromatico.dev/api/cp/${cp}`, {
+        const ciudadData = await (0, $17266311a3707a01$export$2e2bcd8739ae039).get(`https://cp-v2.acromatico.dev/cps/${cp}`, {
             headers: {
                 "X-Acromatico-JWT-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o"
             }
@@ -2750,5 +2757,5 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
 }
 
 
-export {$f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$d513154d1ace596d as permitedCities, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador};
+export {$f0d540db358c20b7$export$f566b60ae4e8e0b3 as EstadoEnGarantia, $f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$d513154d1ace596d as permitedCities, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador};
 //# sourceMappingURL=index.js.map

@@ -1,11 +1,11 @@
-enum EstadoEnGarantia {
+export enum EstadoEnGarantia {
     "Aguascalientes" = 500,
     "Baja California" = 3350,
     "Baja California Sur" = 3350,
     "Campeche" = 575,
     "Chiapas" = 500,
     "Chihuahua" = 500,
-    "Ciudad de México" = 500,
+    "Ciudad de México" = 550,
     "Coahuila de Zaragoza" = 500,
     "Colima" = 500,
     "Durango" = 575,

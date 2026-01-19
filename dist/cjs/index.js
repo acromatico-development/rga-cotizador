@@ -342,6 +342,7 @@ module.exports.descending = $a27f11ae1bfdfdd9$var$descending;
 
 
 
+$parcel$export(module.exports, "EstadoEnGarantia", () => $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3);
 $parcel$export(module.exports, "EstadoFirma", () => $1ad517f6efcdb4ef$export$4d1c8da1ae941898);
 $parcel$export(module.exports, "NivelCobertura", () => $1ad517f6efcdb4ef$export$8250b6f35bc15c68);
 $parcel$export(module.exports, "Coberturas", () => $1ad517f6efcdb4ef$export$6e7b439551acada7);
@@ -4858,41 +4859,41 @@ $5656c3818dc05961$export$2e2bcd8739ae039 = $5656c3818dc05961$var$axios;
 const { Axios: $a4857ae67d62f44a$export$1c00760e9e5a4e95 , AxiosError: $a4857ae67d62f44a$export$c1fbed17c2f6a328 , CanceledError: $a4857ae67d62f44a$export$1ab0c6b20d94fa14 , isCancel: $a4857ae67d62f44a$export$3b22524397b493c6 , CancelToken: $a4857ae67d62f44a$export$fd08e3cb425f0d61 , VERSION: $a4857ae67d62f44a$export$a4ad2735b021c132 , all: $a4857ae67d62f44a$export$84bf76cd7afc7469 , Cancel: $a4857ae67d62f44a$export$848c9b7ead0df967 , isAxiosError: $a4857ae67d62f44a$export$fbafdbe06a5b5a9a , spread: $a4857ae67d62f44a$export$3ae0fd4797ed47c8 , toFormData: $a4857ae67d62f44a$export$10ae0d317ea97f8b , AxiosHeaders: $a4857ae67d62f44a$export$4e7d6ff0f3e6520 , HttpStatusCode: $a4857ae67d62f44a$export$a972f69c851492b3 , formToJSON: $a4857ae67d62f44a$export$86d7c59254d6a2c9 , mergeConfig: $a4857ae67d62f44a$export$7ec1ebcfa9d8bd6a  } = (0, $5656c3818dc05961$export$2e2bcd8739ae039);
 
 
-var $1ad517f6efcdb4ef$var$EstadoEnGarantia;
-(function($1ad517f6efcdb4ef$var$EstadoEnGarantia) {
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Aguascalientes"] = 500] = "Aguascalientes";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Baja California"] = 3350] = "Baja California";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Baja California Sur"] = 3350] = "Baja California Sur";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Campeche"] = 575] = "Campeche";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Chiapas"] = 500] = "Chiapas";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Chihuahua"] = 500] = "Chihuahua";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Ciudad de M\xe9xico"] = 500] = "Ciudad de M\xe9xico";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Colima"] = 500] = "Colima";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Durango"] = 575] = "Durango";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Guanajuato"] = 500] = "Guanajuato";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Guerrero"] = 2050] = "Guerrero";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Hidalgo"] = 1050] = "Hidalgo";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Jalisco"] = 690] = "Jalisco";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["M\xe9xico"] = 500] = "M\xe9xico";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Michoac\xe1n de Ocampo"] = 1950] = "Michoac\xe1n de Ocampo";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Morelos"] = 500] = "Morelos";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Nayarit"] = 500] = "Nayarit";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Nuevo Le\xf3n"] = 575] = "Nuevo Le\xf3n";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Oaxaca"] = 575] = "Oaxaca";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Puebla"] = 1800] = "Puebla";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Quer\xe9taro"] = 500] = "Quer\xe9taro";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Quintana Roo"] = 1200] = "Quintana Roo";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["San Luis Potos\xed"] = 2200] = "San Luis Potos\xed";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Sinaloa"] = 3200] = "Sinaloa";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Sonora"] = 3000] = "Sonora";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tabasco"] = 575] = "Tabasco";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tamaulipas"] = 575] = "Tamaulipas";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Tlaxcala"] = 1450] = "Tlaxcala";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
-    $1ad517f6efcdb4ef$var$EstadoEnGarantia[$1ad517f6efcdb4ef$var$EstadoEnGarantia["Zacatecas"] = 575] = "Zacatecas";
-})($1ad517f6efcdb4ef$var$EstadoEnGarantia || ($1ad517f6efcdb4ef$var$EstadoEnGarantia = {}));
+var $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3;
+(function($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3) {
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Aguascalientes"] = 500] = "Aguascalientes";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California"] = 3350] = "Baja California";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Baja California Sur"] = 3350] = "Baja California Sur";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Campeche"] = 575] = "Campeche";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chiapas"] = 500] = "Chiapas";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Chihuahua"] = 500] = "Chihuahua";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"] = 550] = "Ciudad de M\xe9xico";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Coahuila de Zaragoza"] = 500] = "Coahuila de Zaragoza";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Colima"] = 500] = "Colima";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Durango"] = 575] = "Durango";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guanajuato"] = 500] = "Guanajuato";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Guerrero"] = 2050] = "Guerrero";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Hidalgo"] = 1050] = "Hidalgo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Jalisco"] = 690] = "Jalisco";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["M\xe9xico"] = 500] = "M\xe9xico";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Michoac\xe1n de Ocampo"] = 1950] = "Michoac\xe1n de Ocampo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Morelos"] = 500] = "Morelos";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nayarit"] = 500] = "Nayarit";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Nuevo Le\xf3n"] = 575] = "Nuevo Le\xf3n";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Oaxaca"] = 575] = "Oaxaca";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Puebla"] = 1800] = "Puebla";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Quer\xe9taro"] = 500] = "Quer\xe9taro";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Quintana Roo"] = 1200] = "Quintana Roo";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["San Luis Potos\xed"] = 2200] = "San Luis Potos\xed";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sinaloa"] = 3200] = "Sinaloa";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Sonora"] = 3000] = "Sonora";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tabasco"] = 575] = "Tabasco";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tamaulipas"] = 575] = "Tamaulipas";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Tlaxcala"] = 1450] = "Tlaxcala";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Veracruz de Ignacio de la Llave"] = 3200] = "Veracruz de Ignacio de la Llave";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Yucat\xe1n"] = 3350] = "Yucat\xe1n";
+    $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[$1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Zacatecas"] = 575] = "Zacatecas";
+})($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 || ($1ad517f6efcdb4ef$export$f566b60ae4e8e0b3 = {}));
 var $1ad517f6efcdb4ef$export$4d1c8da1ae941898;
 (function($1ad517f6efcdb4ef$export$4d1c8da1ae941898) {
     $1ad517f6efcdb4ef$export$4d1c8da1ae941898[$1ad517f6efcdb4ef$export$4d1c8da1ae941898["Aguascalientes"] = 5000] = "Aguascalientes";
@@ -5010,7 +5011,14 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
         this.renta = renta;
         this.resolved = new Promise(async (resolve)=>{
             var cpData = await this.getCpData(cp);
-            this.estadoGarantia = $1ad517f6efcdb4ef$var$EstadoEnGarantia[cpData.estado] ? $1ad517f6efcdb4ef$var$EstadoEnGarantia[cpData.estado] : $1ad517f6efcdb4ef$var$EstadoEnGarantia["Ciudad de M\xe9xico"];
+            // const permitido = permitedCities.find((city) => city === cpData.ciudad);
+            // if (!permitido) {
+            //   const edomex = cpData.estado === "México";
+            //   if (!edomex) {
+            //     throw new Error("No se encontró la ciudad");
+            //   }
+            // }
+            this.estadoGarantia = $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] ? $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3[cpData.estado] : $1ad517f6efcdb4ef$export$f566b60ae4e8e0b3["Ciudad de M\xe9xico"];
             this.estadoFirma = estadoFirma ? estadoFirma : $1ad517f6efcdb4ef$export$4d1c8da1ae941898["Ciudad de M\xe9xico"];
             //TO DO: traer variables de fuente externa
             this._investigacionRg = 21;
@@ -5054,7 +5062,7 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
                     nombre: $1ad517f6efcdb4ef$export$8250b6f35bc15c68.lite,
                     coberturas: [
                         $1ad517f6efcdb4ef$export$6e7b439551acada7.investigacionRG,
-                        $1ad517f6efcdb4ef$export$6e7b439551acada7.gestionExtrajudicial,
+                        // Coberturas.gestionExtrajudicial,k
                         $1ad517f6efcdb4ef$export$6e7b439551acada7.recuperacionInmueble
                     ]
                 }
@@ -5093,7 +5101,7 @@ class $1ad517f6efcdb4ef$export$3bbcb4831e58d00d {
         //     },
         //   }
         // );
-        const ciudadData = await (0, $5656c3818dc05961$export$2e2bcd8739ae039).get(`https://cps-app.acromatico.dev/api/cp/${cp}`, {
+        const ciudadData = await (0, $5656c3818dc05961$export$2e2bcd8739ae039).get(`https://cp-v2.acromatico.dev/cps/${cp}`, {
             headers: {
                 "X-Acromatico-JWT-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsImlkIjoiMTIzNDU2In0.lU5p4VREH8qVitzPaNmteGGmtpJA8PwiSNrHkhhJC1o"
             }

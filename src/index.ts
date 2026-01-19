@@ -1,20 +1,20 @@
 import axios from "axios";
 
-enum EstadoEnGarantia {
+export enum EstadoEnGarantia {
   "Aguascalientes" = 500,
   "Baja California" = 3350,
   "Baja California Sur" = 3350,
   "Campeche" = 575,
   "Chiapas" = 500,
   "Chihuahua" = 500,
-  "Ciudad de México" = 500,
+  "Ciudad de México" = 550,
   "Coahuila de Zaragoza" = 500,
   "Colima" = 500,
   "Durango" = 575,
   "Guanajuato" = 500,
   "Guerrero" = 2050,
   "Hidalgo" = 1050,
-  "Jalisco" = 690,
+  "Jalisco" = 690, 
   "México" = 500,
   "Michoacán de Ocampo" = 1950,
   "Morelos" = 500,
@@ -289,7 +289,7 @@ export class Cotizador {
     // );
 
     const ciudadData = await axios.get(
-      `https://cps-app.acromatico.dev/api/cp/${cp}`,
+      `https://cp-v2.acromatico.dev/cps/${cp}`,
       {
         headers: {
           "X-Acromatico-JWT-Token":
@@ -397,7 +397,7 @@ export class Cotizador {
     return this.precioDeVentasMasIVA;
   }
 
-  cambiarRenta(renta: number): number {
+  cambiarRenta(renta: number): number { 
     this.renta = renta;
 
     this.calcularCostos();
