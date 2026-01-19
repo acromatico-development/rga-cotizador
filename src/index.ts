@@ -431,3 +431,127 @@ export class Cotizador {
     return this.cotizar();
   }
 }
+
+// ============================================
+// RG Partners Calculator
+// ============================================
+
+export type PlanRGP = "R_BLUE" | "R_SILVER" | "R_BLACK";
+
+export type CotizacionRGP = {
+  plan: PlanRGP;
+  renta: number;
+  conIVA: number;
+  sinIVA: number;
+};
+
+export class CotizadorRGP {
+  // Constants
+  private static readonly IVA = 0.16;
+  private static readonly STEP_RENTA = 50;
+  private static readonly MIN_BLUE = 3500;
+  private static readonly MIN_SILVER = 5000;
+  private static readonly MIN_BLACK = 6000;
+  private static readonly GAP_SILVER_VS_BASE = 1000;
+  private static readonly GAP_BLUE_VS_SILVER = 1000;
+  private static readonly COSTO_LITE_SIN_IVA = 21 + 36 + 92.972; // 149.972
+
+  renta: number;
+
+  constructor(renta: number) {
+    this.renta = this.normalizeRenta(renta);
+  }
+
+  // Helper methods
+  private round2Down(n: number): number {
+    return Math.floor(n * 100) / 100;
+  }
+
+  private ceilTo10(n: number): number {
+    return Math.ceil(n / 10) * 10;
+  }
+
+  private normalizeRenta(renta: number): number {
+    return Math.round(renta / CotizadorRGP.STEP_RENTA) * CotizadorRGP.STEP_RENTA;
+  }
+
+  private sinIVAfromConIVA(conIVA: number): number {
+    return this.round2Down(conIVA / (1 + CotizadorRGP.IVA));
+  }
+
+  private calculoUtilidad(renta: number): number {
+    let resultado: number;
+
+    if (renta <= 350 / 0.05) {
+      resultado = 0.0428826023 * renta + 2412;
+    } else if (renta <= 8205.162) {
+      resultado = -0.0128826023 * renta + 2762;
+    } else if (renta <= 90000) {
+      resultado = 0.3295 * renta;
+    } else {
+      resultado = 0.23308 * renta + 8684;
+    }
+
+    if (renta <= 350 / 0.05) {
+      resultado += 350;
+    } else if (renta <= 2000 / 0.05) {
+      resultado += 0.05 * renta;
+    } else {
+      resultado += 2000;
+    }
+
+    resultado = resultado - 821.86;
+    return resultado;
+  }
+
+  private tarifaBaseConIVA(renta: number): number {
+    return Math.max(5800, Math.round(0.348 * renta));
+  }
+
+  private liteCalcConIVA(renta: number): number {
+    const util = this.calculoUtilidad(renta);
+    const precioSinIVA = this.round2Down(util + CotizadorRGP.COSTO_LITE_SIN_IVA);
+    const conIVA = this.round2Down(precioSinIVA * (1 + CotizadorRGP.IVA));
+    return Math.max(CotizadorRGP.MIN_BLUE, this.ceilTo10(conIVA));
+  }
+
+  private roundTo10ButNeverDown(x: number): number {
+    const r = Math.round(x / 10) * 10;
+    return Math.max(x, r);
+  }
+
+  cotizar(): CotizacionRGP[] {
+    const renta = this.renta;
+
+    // Base
+    const base = this.tarifaBaseConIVA(renta);
+
+    // Silver
+    const silver = Math.max(CotizadorRGP.MIN_SILVER, base - CotizadorRGP.GAP_SILVER_VS_BASE);
+
+    // Black
+    const blackRaw = Math.max(CotizadorRGP.MIN_BLACK, base);
+    const black = this.roundTo10ButNeverDown(blackRaw);
+
+    // Blue
+    const blueCap = silver - CotizadorRGP.GAP_BLUE_VS_SILVER;
+    const blue = Math.max(CotizadorRGP.MIN_BLUE, Math.min(this.liteCalcConIVA(renta), blueCap));
+
+    return [
+      { plan: "R_BLUE", renta, conIVA: blue, sinIVA: this.sinIVAfromConIVA(blue) },
+      { plan: "R_SILVER", renta, conIVA: silver, sinIVA: this.sinIVAfromConIVA(silver) },
+      { plan: "R_BLACK", renta, conIVA: black, sinIVA: this.sinIVAfromConIVA(black) },
+    ];
+  }
+
+  cambiarRenta(renta: number): CotizacionRGP[] {
+    this.renta = this.normalizeRenta(renta);
+    return this.cotizar();
+  }
+}
+
+// Standalone function for quick calculations without instantiating the class
+export function cotizarRGP(rentaInput: number): CotizacionRGP[] {
+  const cotizador = new CotizadorRGP(rentaInput);
+  return cotizador.cotizar();
+}

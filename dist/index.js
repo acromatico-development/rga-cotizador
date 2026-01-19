@@ -2653,7 +2653,7 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
                     nombre: $f0d540db358c20b7$export$8250b6f35bc15c68.lite,
                     coberturas: [
                         $f0d540db358c20b7$export$6e7b439551acada7.investigacionRG,
-                        // Coberturas.gestionExtrajudicial,k
+                        $f0d540db358c20b7$export$6e7b439551acada7.gestionExtrajudicial,
                         $f0d540db358c20b7$export$6e7b439551acada7.recuperacionInmueble
                     ]
                 }
@@ -2755,7 +2755,117 @@ class $f0d540db358c20b7$export$3bbcb4831e58d00d {
         return this.cotizar();
     }
 }
+class $f0d540db358c20b7$export$172e7a385d3e33b9 {
+    static #_ = (()=>{
+        // Constants
+        this.IVA = 0.16;
+    })();
+    static #_1 = (()=>{
+        this.STEP_RENTA = 50;
+    })();
+    static #_2 = (()=>{
+        this.MIN_BLUE = 3500;
+    })();
+    static #_3 = (()=>{
+        this.MIN_SILVER = 5000;
+    })();
+    static #_4 = (()=>{
+        this.MIN_BLACK = 6000;
+    })();
+    static #_5 = (()=>{
+        this.GAP_SILVER_VS_BASE = 1000;
+    })();
+    static #_6 = (()=>{
+        this.GAP_BLUE_VS_SILVER = 1000;
+    })();
+    static #_7 = (()=>{
+        this.COSTO_LITE_SIN_IVA = 57 + 92.972 // 149.972
+        ;
+    })();
+    constructor(renta){
+        this.renta = this.normalizeRenta(renta);
+    }
+    // Helper methods
+    round2Down(n) {
+        return Math.floor(n * 100) / 100;
+    }
+    ceilTo10(n) {
+        return Math.ceil(n / 10) * 10;
+    }
+    normalizeRenta(renta) {
+        return Math.round(renta / $f0d540db358c20b7$export$172e7a385d3e33b9.STEP_RENTA) * $f0d540db358c20b7$export$172e7a385d3e33b9.STEP_RENTA;
+    }
+    sinIVAfromConIVA(conIVA) {
+        return this.round2Down(conIVA / (1 + $f0d540db358c20b7$export$172e7a385d3e33b9.IVA));
+    }
+    calculoUtilidad(renta) {
+        let resultado;
+        if (renta <= 7000) resultado = 0.0428826023 * renta + 2412;
+        else if (renta <= 8205.162) resultado = -0.0128826023 * renta + 2762;
+        else if (renta <= 90000) resultado = 0.3295 * renta;
+        else resultado = 0.23308 * renta + 8684;
+        if (renta <= 7000) resultado += 350;
+        else if (renta <= 40000) resultado += 0.05 * renta;
+        else resultado += 2000;
+        resultado = resultado - 821.86;
+        return resultado;
+    }
+    tarifaBaseConIVA(renta) {
+        return Math.max(5800, Math.round(0.348 * renta));
+    }
+    liteCalcConIVA(renta) {
+        const util = this.calculoUtilidad(renta);
+        const precioSinIVA = this.round2Down(util + $f0d540db358c20b7$export$172e7a385d3e33b9.COSTO_LITE_SIN_IVA);
+        const conIVA = this.round2Down(precioSinIVA * (1 + $f0d540db358c20b7$export$172e7a385d3e33b9.IVA));
+        return Math.max($f0d540db358c20b7$export$172e7a385d3e33b9.MIN_BLUE, this.ceilTo10(conIVA));
+    }
+    roundTo10ButNeverDown(x) {
+        const r = Math.round(x / 10) * 10;
+        return Math.max(x, r);
+    }
+    cotizar() {
+        const renta = this.renta;
+        // Base
+        const base = this.tarifaBaseConIVA(renta);
+        // Silver
+        const silver = Math.max($f0d540db358c20b7$export$172e7a385d3e33b9.MIN_SILVER, base - $f0d540db358c20b7$export$172e7a385d3e33b9.GAP_SILVER_VS_BASE);
+        // Black
+        const blackRaw = Math.max($f0d540db358c20b7$export$172e7a385d3e33b9.MIN_BLACK, base);
+        const black = this.roundTo10ButNeverDown(blackRaw);
+        // Blue
+        const blueCap = silver - $f0d540db358c20b7$export$172e7a385d3e33b9.GAP_BLUE_VS_SILVER;
+        const blue = Math.max($f0d540db358c20b7$export$172e7a385d3e33b9.MIN_BLUE, Math.min(this.liteCalcConIVA(renta), blueCap));
+        return [
+            {
+                plan: "R_BLUE",
+                renta: renta,
+                conIVA: blue,
+                sinIVA: this.sinIVAfromConIVA(blue)
+            },
+            {
+                plan: "R_SILVER",
+                renta: renta,
+                conIVA: silver,
+                sinIVA: this.sinIVAfromConIVA(silver)
+            },
+            {
+                plan: "R_BLACK",
+                renta: renta,
+                conIVA: black,
+                sinIVA: this.sinIVAfromConIVA(black)
+            }
+        ];
+    }
+    cambiarRenta(renta) {
+        this.renta = this.normalizeRenta(renta);
+        return this.cotizar();
+    }
+}
+function $f0d540db358c20b7$export$f49a436006fcef62(rentaInput) {
+    const cotizador = new $f0d540db358c20b7$export$172e7a385d3e33b9(rentaInput);
+    return cotizador.cotizar();
+}
 
 
-export {$f0d540db358c20b7$export$f566b60ae4e8e0b3 as EstadoEnGarantia, $f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$d513154d1ace596d as permitedCities, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador};
+export {$f0d540db358c20b7$export$f566b60ae4e8e0b3 as EstadoEnGarantia, $f0d540db358c20b7$export$4d1c8da1ae941898 as EstadoFirma, $f0d540db358c20b7$export$8250b6f35bc15c68 as NivelCobertura, $f0d540db358c20b7$export$6e7b439551acada7 as Coberturas, $f0d540db358c20b7$export$d513154d1ace596d as permitedCities, $f0d540db358c20b7$export$3bbcb4831e58d00d as Cotizador, $f0d540db358c20b7$export$172e7a385d3e33b9 as CotizadorRGP, $f0d540db358c20b7$export$f49a436006fcef62 as cotizarRGP};
 //# sourceMappingURL=index.js.map

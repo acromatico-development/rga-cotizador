@@ -109,5 +109,19 @@ export class Cotizador {
     cambiarEstadoFirma(estado: EstadoFirma): number;
     cambiarNivel(nivel: NivelCobertura): number;
 }
+export type PlanRGP = "R_BLUE" | "R_SILVER" | "R_BLACK";
+export type CotizacionRGP = {
+    plan: PlanRGP;
+    renta: number;
+    conIVA: number;
+    sinIVA: number;
+};
+export class CotizadorRGP {
+    renta: number;
+    constructor(renta: number);
+    cotizar(): CotizacionRGP[];
+    cambiarRenta(renta: number): CotizacionRGP[];
+}
+export function cotizarRGP(rentaInput: number): CotizacionRGP[];
 
 //# sourceMappingURL=index.d.ts.map
