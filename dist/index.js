@@ -2782,8 +2782,12 @@ class $f0d540db358c20b7$export$172e7a385d3e33b9 {
         this.COSTO_LITE_SIN_IVA = 57 + 92.972 // 149.972
         ;
     })();
-    constructor(renta){
+    static #_8 = (()=>{
+        this.INSURANCE_RATE = 0.1408;
+    })();
+    constructor(renta, insurance = false){
         this.renta = this.normalizeRenta(renta);
+        this.insurance = insurance;
     }
     // Helper methods
     round2Down(n) {
@@ -2823,8 +2827,14 @@ class $f0d540db358c20b7$export$172e7a385d3e33b9 {
         const r = Math.round(x / 10) * 10;
         return Math.max(x, r);
     }
+    setInsurance(value) {
+        this.insurance = value;
+        return this.cotizar();
+    }
     cotizar() {
         const renta = this.renta;
+        // Calculate insurance cost (14.08% of rent)
+        const seguro = this.insurance ? this.round2Down(renta * $f0d540db358c20b7$export$172e7a385d3e33b9.INSURANCE_RATE) : 0;
         // Base
         const base = this.tarifaBaseConIVA(renta);
         // Silver
@@ -2839,20 +2849,23 @@ class $f0d540db358c20b7$export$172e7a385d3e33b9 {
             {
                 plan: "R_BLUE",
                 renta: renta,
-                conIVA: blue,
-                sinIVA: this.sinIVAfromConIVA(blue)
+                conIVA: blue + seguro,
+                sinIVA: this.sinIVAfromConIVA(blue) + this.sinIVAfromConIVA(seguro),
+                seguro: seguro
             },
             {
                 plan: "R_SILVER",
                 renta: renta,
-                conIVA: silver,
-                sinIVA: this.sinIVAfromConIVA(silver)
+                conIVA: silver + seguro,
+                sinIVA: this.sinIVAfromConIVA(silver) + this.sinIVAfromConIVA(seguro),
+                seguro: seguro
             },
             {
                 plan: "R_BLACK",
                 renta: renta,
-                conIVA: black,
-                sinIVA: this.sinIVAfromConIVA(black)
+                conIVA: black + seguro,
+                sinIVA: this.sinIVAfromConIVA(black) + this.sinIVAfromConIVA(seguro),
+                seguro: seguro
             }
         ];
     }
@@ -2861,8 +2874,8 @@ class $f0d540db358c20b7$export$172e7a385d3e33b9 {
         return this.cotizar();
     }
 }
-function $f0d540db358c20b7$export$f49a436006fcef62(rentaInput) {
-    const cotizador = new $f0d540db358c20b7$export$172e7a385d3e33b9(rentaInput);
+function $f0d540db358c20b7$export$f49a436006fcef62(rentaInput, insurance = false) {
+    const cotizador = new $f0d540db358c20b7$export$172e7a385d3e33b9(rentaInput, insurance);
     return cotizador.cotizar();
 }
 
