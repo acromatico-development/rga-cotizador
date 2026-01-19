@@ -443,6 +443,7 @@ export type CotizacionRGP = {
   renta: number;
   conIVA: number;
   sinIVA: number;
+  seguro: number;
 };
 
 export class CotizadorRGP {
@@ -455,11 +456,14 @@ export class CotizadorRGP {
   private static readonly GAP_SILVER_VS_BASE = 1000;
   private static readonly GAP_BLUE_VS_SILVER = 1000;
   private static readonly COSTO_LITE_SIN_IVA = 21 + 36 + 92.972; // 149.972
+  private static readonly INSURANCE_RATE = 0.1408;
 
   renta: number;
+  insurance: boolean;
 
-  constructor(renta: number) {
+  constructor(renta: number, insurance: boolean = false) {
     this.renta = this.normalizeRenta(renta);
+    this.insurance = insurance;
   }
 
   // Helper methods
@@ -520,8 +524,16 @@ export class CotizadorRGP {
     return Math.max(x, r);
   }
 
+  setInsurance(value: boolean): CotizacionRGP[] {
+    this.insurance = value;
+    return this.cotizar();
+  }
+
   cotizar(): CotizacionRGP[] {
     const renta = this.renta;
+
+    // Calculate insurance cost (14.08% of rent)
+    const seguro = this.insurance ? this.round2Down(renta * CotizadorRGP.INSURANCE_RATE) : 0;
 
     // Base
     const base = this.tarifaBaseConIVA(renta);
@@ -538,9 +550,9 @@ export class CotizadorRGP {
     const blue = Math.max(CotizadorRGP.MIN_BLUE, Math.min(this.liteCalcConIVA(renta), blueCap));
 
     return [
-      { plan: "R_BLUE", renta, conIVA: blue, sinIVA: this.sinIVAfromConIVA(blue) },
-      { plan: "R_SILVER", renta, conIVA: silver, sinIVA: this.sinIVAfromConIVA(silver) },
-      { plan: "R_BLACK", renta, conIVA: black, sinIVA: this.sinIVAfromConIVA(black) },
+      { plan: "R_BLUE", renta, conIVA: blue + seguro, sinIVA: this.sinIVAfromConIVA(blue) + this.sinIVAfromConIVA(seguro), seguro },
+      { plan: "R_SILVER", renta, conIVA: silver + seguro, sinIVA: this.sinIVAfromConIVA(silver) + this.sinIVAfromConIVA(seguro), seguro },
+      { plan: "R_BLACK", renta, conIVA: black + seguro, sinIVA: this.sinIVAfromConIVA(black) + this.sinIVAfromConIVA(seguro), seguro },
     ];
   }
 
@@ -551,7 +563,7 @@ export class CotizadorRGP {
 }
 
 // Standalone function for quick calculations without instantiating the class
-export function cotizarRGP(rentaInput: number): CotizacionRGP[] {
-  const cotizador = new CotizadorRGP(rentaInput);
+export function cotizarRGP(rentaInput: number, insurance: boolean = false): CotizacionRGP[] {
+  const cotizador = new CotizadorRGP(rentaInput, insurance);
   return cotizador.cotizar();
 }

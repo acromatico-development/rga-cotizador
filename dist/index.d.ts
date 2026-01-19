@@ -115,13 +115,16 @@ export type CotizacionRGP = {
     renta: number;
     conIVA: number;
     sinIVA: number;
+    seguro: number;
 };
 export class CotizadorRGP {
     renta: number;
-    constructor(renta: number);
+    insurance: boolean;
+    constructor(renta: number, insurance?: boolean);
+    setInsurance(value: boolean): CotizacionRGP[];
     cotizar(): CotizacionRGP[];
     cambiarRenta(renta: number): CotizacionRGP[];
 }
-export function cotizarRGP(rentaInput: number): CotizacionRGP[];
+export function cotizarRGP(rentaInput: number, insurance?: boolean): CotizacionRGP[];
 
 //# sourceMappingURL=index.d.ts.map
